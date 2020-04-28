@@ -3,14 +3,17 @@ const Home = (argument = "") => {
     let cleanedArgument = argument.replace(/\s+/g, "-");
     let articles = "";
 
-    const fetchList = (url, argument) => {
-      let finalURL = url;
-      if (argument) {
-        finalURL = url + "?search=" + argument;
-      }	
+    const fetchList = (url) => {
+      let URL = url;
 
-      fetch(`${finalURL}`)
+      console.log(URL);
+
+      fetch(`${URL}`)
         .then((response) => response.json())
+        .then((response) => {
+				    	console.log(response);
+				    	return response;
+				    	})
         .then((response) => {
           response.results.forEach((article) => {
             articles += `
@@ -25,7 +28,7 @@ const Home = (argument = "") => {
         });
     };
 
-    fetchList("https://api.rawg.io/api/games", cleanedArgument);
+    fetchList("https://api.rawg.io/api/games?dates=2021-01-01,2021-12-31");
   };
 
   const render = () => {
