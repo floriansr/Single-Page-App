@@ -4,11 +4,28 @@
 	<title>un simple exercice</title>
 	<link rel="stylesheet" href="dist/bundle.css" />
 </head>
+
+<header>
+	<h1>The Hyper Progame</h1>
+	<form>
+		<input type="text" placeholder="Find a game..." id="searchbar">
+	</form>
+</header>
+
 <body>
 	<div class="container">
-		<a href="#">Home</a>
-	    <a href="#gamelist">GameList</a>
-	    <a href="#gamelist/borderlands">GameList borderlands</a>
+
+		<div class="dropdown">
+  			<a class="btn btn-secondary dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtre de recherche</a>
+
+  			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    			<a class="dropdown-item" href="#">Home</a>
+    			<a class="dropdown-item" href="#gamelist">Les plus gros succès</a>
+    			<a class="dropdown-item" href="#gamelist/borderlands">Borderlands</a>
+    			<a class="dropdown-item" href="#gamelist/borderlands">Les plus gros succèsLes plus gros succèsLes plus gros succèsLes plus </a>
+
+  			</div>
+		</div>
 	    
 		<section id="gameContent"></section>
 	</div>
