@@ -1,4 +1,3 @@
-import 'bootstrap';
 import "../sass/styles.scss";
 import routes from "./routes";
 

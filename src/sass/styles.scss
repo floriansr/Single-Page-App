@@ -3,17 +3,84 @@
   src: url("../fonts/big_noodle_titling.ttf");
 }
 
-@import "~bootstrap/scss/bootstrap";
+/*variables*/
 
-$red: rgb(255, 20, 20);
+$white: rgb(255, 255, 255);
+$brown : #4C4444;
+$lightgrey: #E4E4E4;
+
+/*elements*/
 
 p {
-  color: $red;
   font-family: "Big Noodles";
 }
 
 body {
+	color:$white;
+	background-color: $brown;
 }
 
-/*  background-image: url("../img/cat.jpg");
-*/
+a {
+	color: $white;
+	margin: auto;
+}
+
+h1 {
+	margin: auto;
+}
+
+h2 {
+	margin: auto;
+}
+
+section {
+	margin: auto;
+}
+
+/*class*/
+
+.container {
+	position:relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.page-list .articles {
+
+	display: flex;
+	flex-wrap: wrap; /*Les éléments flexibles sont disposé sur plusieurs lignes.*/
+	position: relative;
+	justify-content: space-between;
+  	padding-right: 15px;
+  	padding-left: 15px;
+
+	.cardGame {
+	  position: relative;
+	  display: flex;
+	  flex-direction: column; /*place verticalement le contenu de la card */
+	  word-wrap: break-word;
+	  background-color: $brown;
+	  background-clip: border-box; /*L'arrière-plan s'étend jusqu'à la limite externe de la bordure.*/
+	  border: 1px solid $lightgrey;
+	  border-radius: 0.25rem;
+	  flex: 0 0 30%;
+	  max-width: 30%;
+	  margin-bottom: 0.5rem;
+	}
+}
+
+
+/*tools*/
+
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}

@@ -1,6 +1,11 @@
+import moment from "moment";
+
 const Home = (argument = "") => {
+
+  let time = moment().format().slice(0,10);
+  let future_time = moment().add(1, 'years').format().slice(0,10);
+
   const preparePage = () => {
-    let cleanedArgument = argument.replace(/\s+/g, "-");
     let articles = "";
 
     const fetchList = (url) => {
@@ -28,7 +33,7 @@ const Home = (argument = "") => {
         });
     };
 
-    fetchList("https://api.rawg.io/api/games?dates=2021-01-01,2021-12-31");
+    fetchList(`https://api.rawg.io/api/games?dates=${time},${future_time}`);
   };
 
   const render = () => {
